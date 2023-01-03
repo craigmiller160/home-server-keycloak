@@ -22,3 +22,8 @@ provider "keycloak" {
   client_secret = var.terraform_client_secret
   url = "https://auth-craigmiller160.ddns.net"
 }
+
+provider "onepassword" {
+  url = "https://infra-craigmiller160.ddns.net/onepassword"
+  token = var.onepassword_token
+}
