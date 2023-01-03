@@ -20,7 +20,4 @@ The following shell environment variables must be present on the machine in orde
 ```
 # The operator access token for communicating with 1Password
 ONEPASSWORD_TOKEN=XXXXXXX
-
-# The Client Secret for the terraform-client
-KEYCLOAK_TERRAFORM_CLIENT_SECRET=#####
 ```
