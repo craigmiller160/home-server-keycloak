@@ -24,6 +24,7 @@ spec:
             - --https-certificate-file=/certs/tls.crt
             - --https-certificate-key-file=/certs/tls.key
             - --hostname-path=/keycloak
+            - --proxy reencrypt
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
