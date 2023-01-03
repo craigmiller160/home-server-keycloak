@@ -6,6 +6,11 @@ locals {
       registration_email_as_username = true
       login_with_email_allowed = true
     }
+
+    email = {
+      host = ""
+      from = ""
+    }
   }
 }
 
