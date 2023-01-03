@@ -4,8 +4,8 @@ secure_ingress:
   name: keycloak-ingress
   backendIsHttps: true
   hosts:
-    - name: infra-craigmiller160.ddns.net
+    - name: auth-craigmiller160.ddns.net
       services:
-        - path: /(keycloak(/.*)?)
+        - path: /(.*)$
           serviceName: keycloak
           portNumber: 8443
