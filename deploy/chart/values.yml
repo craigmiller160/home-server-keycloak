@@ -1,2 +1,11 @@
 port: 8080
 imageTag: 20.0.2
+secure_ingress:
+  name: keycloak-ingress
+  backendIsHttps: true
+  hosts:
+    - name: infra-craigmiller160.ddns.net
+      services:
+        - path: /keycloak/(.*)
+          serviceName: keycloak
+          portNumber: 8080
