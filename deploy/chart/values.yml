@@ -1,4 +1,4 @@
-port: 8080
+port: 8443
 imageTag: 20.0.2
 secure_ingress:
   name: keycloak-ingress
@@ -8,4 +8,4 @@ secure_ingress:
       services:
         - path: /(keycloak(/.*)?)
           serviceName: keycloak
-          portNumber: 8080
+          portNumber: 8443
