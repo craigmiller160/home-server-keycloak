@@ -1,8 +1,9 @@
 port: 8443
 imageTag: 20.0.2
+# TODO completely refactor this into internal vs external paths
 secure_ingress:
   name: keycloak-ingress
-  backendIsHttps: true
+  backendIsHttps: false
   hosts:
     - name: auth-craigmiller160.ddns.net
       services:
