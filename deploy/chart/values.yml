@@ -6,6 +6,6 @@ secure_ingress:
   hosts:
     - name: infra-craigmiller160.ddns.net
       services:
-        - path: /keycloak/(.*)
+        - path: /(keycloak(/.*)?)
           serviceName: keycloak
           portNumber: 8080
