@@ -1,13 +1,13 @@
 terraform {
   backend "kubernetes" {
-    secret_suffix = "nexus-state"
+    secret_suffix = "keycloak-state"
     config_path   = "~/.kube/config"
   }
 
   required_providers {
-    nexus = {
-      source  = "datadrivers/nexus"
-      version = "1.21.0"
+    keycloak = {
+      source = "mrparkers/keycloak"
+      version = "4.1.0"
     }
 
     onepassword = {
