@@ -3,6 +3,7 @@ locals {
     login = {
       verify_email = true
       reset_password_allowed = true
+      registration_email_as_username = true
     }
   }
 }
@@ -15,6 +16,7 @@ resource "keycloak_realm" "apps_dev" {
 
   verify_email = local.common_realm_settings.login.verify_email
   reset_password_allowed = local.common_realm_settings.login.reset_password_allowed
+  registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
 }
 
 resource "keycloak_realm" "apps_prod" {
@@ -25,4 +27,5 @@ resource "keycloak_realm" "apps_prod" {
 
   verify_email = local.common_realm_settings.login.verify_email
   reset_password_allowed = local.common_realm_settings.login.reset_password_allowed
+  registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
 }
