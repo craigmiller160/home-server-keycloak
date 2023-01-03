@@ -21,6 +21,8 @@ spec:
           args:
             - start
             - --hostname-strict=false
+            - --https-certificate-file=/certs/tls.crt
+            - --https-certificate-key-file=/certs/tls.key
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
@@ -47,3 +49,10 @@ spec:
                 secretKeyRef:
                   key: password
                   name: postgres-root-account
+          volumeMounts:
+            - mountPath: /certs
+              name: certs-volume
+      volumes:
+        - name: certs-volume
+          secret:
+            secretName: {{ .Chart.Name }}-internal
