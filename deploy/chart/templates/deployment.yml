@@ -34,3 +34,13 @@ spec:
                 secretKeyRef:
                   key: password
                   name: {{ .Chart.Name }}-admin-user
+            - name: KC_DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: postgres-root-account
+            - name: KC_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: postgres-root-account
