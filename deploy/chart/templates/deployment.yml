@@ -19,7 +19,7 @@ spec:
           image: "quay.io/keycloak/keycloak:{{ .Values.imageTag }}"
           imagePullPolicy: IfNotPresent
           command:
-            - start
+            - start-dev
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
