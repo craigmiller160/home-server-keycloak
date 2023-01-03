@@ -23,6 +23,7 @@ spec:
             - --hostname-strict=false
             - --https-certificate-file=/certs/tls.crt
             - --https-certificate-key-file=/certs/tls.key
+            - --hostname-path=/keycloak
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
