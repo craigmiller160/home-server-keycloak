@@ -47,12 +47,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: username
-                  name: postgres-root-account
+                  name: {{ .Chart.Name }}-postgres
             - name: KC_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: password
-                  name: postgres-root-account
+                  name: {{ .Chart.Name }}-postgres
           volumeMounts:
             - mountPath: /certs
               name: certs-volume
