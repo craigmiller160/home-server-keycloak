@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: quay.io/keycloak/keycloak:20.0.2
+          image: "quay.io/keycloak/keycloak:{{ .Values.imageTag }}"
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .Values.port }}
           envFrom:
             - configMapRef:
                 name: {{ .Chart.Name }}
