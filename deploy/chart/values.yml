@@ -1,4 +1,4 @@
-port: 8443
+port: 8080
 imageTag: 20.0.2
 # TODO completely refactor this into internal vs external paths
 secure_ingress:
