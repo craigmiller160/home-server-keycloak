@@ -7,6 +7,6 @@ secure_ingress:
   hosts:
     - name: auth-craigmiller160.ddns.net
       services:
-        - path: /(.*)$
+        - path: /
           serviceName: keycloak
           portNumber: 8443
