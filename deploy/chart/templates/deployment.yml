@@ -23,3 +23,14 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ .Chart.Name }}
+          env:
+            - name: KEYCLOAK_ADMIN
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: {{ .Chart.Name }}-admin-user
+            - name: KEYCLOAK_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: {{ .Chart.Name }}-admin-password
