@@ -8,8 +8,14 @@ locals {
     }
 
     email = {
-      host = ""
-      from = ""
+      host = local.email_credentials.host
+      port = local.email_credentials.port
+      from = local.email_credentials.username
+      from_display_name = "Craig's Authorization Server"
+      starttls = local.email_credentials.start_tls
+      ssl = local.email_credentials.ssl
+      username = local.email_credentials.username
+      password = local.email_credentials.password
     }
   }
 }
@@ -24,6 +30,19 @@ resource "keycloak_realm" "apps_dev" {
   reset_password_allowed = local.common_realm_settings.login.reset_password_allowed
   registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
+
+  smtp_server {
+    host = local.common_realm_settings.email.host
+    port = local.common_realm_settings.email.port
+    from = local.common_realm_settings.email.from
+    from_display_name = local.common_realm_settings.email.from_display_name
+    starttls = local.common_realm_settings.email.starttls
+    ssl = local.common_realm_settings.email.ssl
+    auth {
+      username = local.common_realm_settings.email.username
+      password = local.common_realm_settings.email.password
+    }
+  }
 }
 
 resource "keycloak_realm" "apps_prod" {
@@ -36,4 +55,17 @@ resource "keycloak_realm" "apps_prod" {
   reset_password_allowed = local.common_realm_settings.login.reset_password_allowed
   registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
+
+  smtp_server {
+    host = local.common_realm_settings.email.host
+    port = local.common_realm_settings.email.port
+    from = local.common_realm_settings.email.from
+    from_display_name = local.common_realm_settings.email.from_display_name
+    starttls = local.common_realm_settings.email.starttls
+    ssl = local.common_realm_settings.email.ssl
+    auth {
+      username = local.common_realm_settings.email.username
+      password = local.common_realm_settings.email.password
+    }
+  }
 }
