@@ -5,10 +5,10 @@ terraform {
   }
 
   required_providers {
-    keycloak = {
-      source = "mrparkers/keycloak"
-      version = "4.1.0"
-    }
+#    keycloak = {
+#      source = "mrparkers/keycloak"
+#      version = "4.1.0"
+#    }
 
     onepassword = {
       source = "1Password/onepassword"
