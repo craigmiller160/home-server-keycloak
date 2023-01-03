@@ -16,3 +16,7 @@ terraform {
     }
   }
 }
+
+provider "keycloak" {
+
+}
