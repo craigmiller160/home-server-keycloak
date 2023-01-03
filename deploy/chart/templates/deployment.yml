@@ -21,10 +21,10 @@ spec:
           args:
             - start
             - --hostname-strict=false
-            - --https-certificate-file=/certs/tls.crt
-            - --https-certificate-key-file=/certs/tls.key
-            - --hostname-path=/keycloak
-            - --proxy=reencrypt
+{{/*            - --https-certificate-file=/certs/tls.crt*/}}
+{{/*            - --https-certificate-key-file=/certs/tls.key*/}}
+{{/*            - --hostname-path=/keycloak*/}}
+            - --proxy=edge
             # TODO delete this
             - --log-level=debug
           ports:
