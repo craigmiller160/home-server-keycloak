@@ -33,4 +33,4 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: password
-                  name: {{ .Chart.Name }}-admin-password
+                  name: {{ .Chart.Name }}-admin-user
