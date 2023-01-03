@@ -25,6 +25,8 @@ spec:
             - --https-certificate-key-file=/certs/tls.key
             - --hostname-path=/keycloak
             - --proxy=reencrypt
+            # TODO delete this
+            - --log-level=debug
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
