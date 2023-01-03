@@ -19,6 +19,7 @@ terraform {
 
 output "my_onepassword_item" {
   value = data.onepassword_item.terraform_client
+  sensitive = true
 }
 
 #provider "keycloak" {
