@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ .Chart.Name }}-internal
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ .Chart.Name }}-internal
+spec:
+  isCA: true
+  commonName: {{ .Chart.Name }}-internal
+  secretName: {{ .Chart.Name }}-internal
+  dnsNames:
+    - infra-craigmiller160.ddns.net
+    - craigmiller160.ddns.net
+    - localhost
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  issuerRef:
+    name: {{ .Chart.Name }}-internal
+    kind: ClusterIssuer
+    group: cert-manager.io
