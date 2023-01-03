@@ -18,8 +18,8 @@ spec:
         - name: {{ .Chart.Name }}
           image: "quay.io/keycloak/keycloak:{{ .Values.imageTag }}"
           imagePullPolicy: IfNotPresent
-          command:
-            - start-dev
+{{/*          command:*/}}
+{{/*            - start-dev*/}}
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
