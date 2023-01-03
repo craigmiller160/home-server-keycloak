@@ -18,7 +18,7 @@ terraform {
 }
 
 provider "keycloak" {
-  client_id = data.onepassword_item.terraform_client.clientId
+  client_id = data.onepassword_item.terraform_client.section.keycloak.clientId
   client_secret = data.onepassword_item.terraform_client.clientSecret
   url = "https://auth-craigmiller160.ddns.net"
 }
