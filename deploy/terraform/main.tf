@@ -18,8 +18,8 @@ terraform {
 }
 
 provider "keycloak" {
-  client_id = local.terraform_client["client_id"]
-  client_secret = local.terraform_client["client_secret"]
+  client_id = local.terraform_client.client_id
+  client_secret = local.terraform_client.client_secret
   url = "https://auth-craigmiller160.ddns.net"
 }
 
