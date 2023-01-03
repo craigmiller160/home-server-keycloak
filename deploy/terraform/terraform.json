@@ -1,4 +1,3 @@
 {
-  "onepassword_token": "$ONEPASSWORD_TOKEN",
-  "terraform_client_secret": "$KEYCLOAK_TERRAFORM_CLIENT_SECRET"
+  "onepassword_token": "$ONEPASSWORD_TOKEN"
 }
