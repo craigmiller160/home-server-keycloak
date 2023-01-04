@@ -14,6 +14,62 @@ locals {
       default_action = true
       priority = 2
     }
+    terms_and_conditions = {
+      alias = "terms_and_conditions"
+      name = "Terms and Conditions"
+      enabled = false
+      default_action = false
+      priority = 3
+    }
+    update_profile = {
+      alias = "UPDATE_PROFILE"
+      name = "Update Profile"
+      enabled = true
+      default_action = true
+      priority = 4
+    }
+    verify_email = {
+      alias = "VERIFY_EMAIL"
+      name = "Verify Email"
+      enabled = true
+      default_action = true
+      priority = 5
+    }
+    delete_account = {
+      alias = "delete_account"
+      name = "Delete Account"
+      enabled = false
+      default_action = false
+      priority = 6
+    }
+    webauthn_register = {
+      alias = "webauthn-register"
+      name = "Webauthn Register"
+      enabled = false
+      default_action = false
+      priority = 7
+    }
+    webauthn_register_passwordless = {
+      alias = "webauthn-register-passwordless"
+      name = "Webauthn Register Passwordless"
+      enabled = false
+      default_action = false
+      priority = 8
+    }
+    update_user_locale = {
+      alias = "update_user_locale"
+      name = "Update User Locale"
+      enabled = false
+      default_action = false
+      priority = 9
+    }
+    verify_profile = {
+      alias = "VERIFY_PROFILE"
+      name = "Verify Profile"
+      enabled = true
+      default_action = true
+      priority = 10
+    }
   }
 }
 
@@ -52,5 +108,3 @@ resource "keycloak_required_action" "prod_update_password" {
   default_action = local.required_actions.update_password.default_action
   priority = local.required_actions.update_password.priority
 }
-
-# [terms_and_conditions update_user_locale delete_account webauthn-register-passwordless VERIFY_PROFILE UPDATE_PASSWORD CONFIGURE_TOTP VERIFY_EMAIL webauthn-register UPDATE_PROFILE]
