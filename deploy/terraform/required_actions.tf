@@ -108,3 +108,57 @@ resource "keycloak_required_action" "prod_update_password" {
   default_action = local.required_actions.update_password.default_action
   priority = local.required_actions.update_password.priority
 }
+
+resource "keycloak_required_action" "dev_terms_and_conditions" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.terms_and_conditions.alias
+  name = local.required_actions.terms_and_conditions.name
+  enabled = local.required_actions.terms_and_conditions.enabled
+  default_action = local.required_actions.terms_and_conditions.default_action
+  priority = local.required_actions.terms_and_conditions.priority
+}
+
+resource "keycloak_required_action" "prod_terms_and_conditions" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.terms_and_conditions.alias
+  name = local.required_actions.terms_and_conditions.name
+  enabled = local.required_actions.terms_and_conditions.enabled
+  default_action = local.required_actions.terms_and_conditions.default_action
+  priority = local.required_actions.terms_and_conditions.priority
+}
+
+resource "keycloak_required_action" "dev_update_profile" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.update_profile.alias
+  name = local.required_actions.update_profile.name
+  enabled = local.required_actions.update_profile.enabled
+  default_action = local.required_actions.update_profile.default_action
+  priority = local.required_actions.update_profile.priority
+}
+
+resource "keycloak_required_action" "prod_update_profile" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.update_profile.alias
+  name = local.required_actions.update_profile.name
+  enabled = local.required_actions.update_profile.enabled
+  default_action = local.required_actions.update_profile.default_action
+  priority = local.required_actions.update_profile.priority
+}
+
+resource "keycloak_required_action" "dev_verify_email" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.verify_email.alias
+  name = local.required_actions.verify_email.name
+  enabled = local.required_actions.verify_email.enabled
+  default_action = local.required_actions.verify_email.default_action
+  priority = local.required_actions.verify_email.priority
+}
+
+resource "keycloak_required_action" "prod_verify_email" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.verify_email.alias
+  name = local.required_actions.verify_email.name
+  enabled = local.required_actions.verify_email.enabled
+  default_action = local.required_actions.verify_email.default_action
+  priority = local.required_actions.verify_email.priority
+}
