@@ -1,4 +1,13 @@
-resource "keycloak_required_action" "required_action" {
+resource "keycloak_required_action" "configure_otp" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias    = "CONFIGURE_TOTP"
+  enabled  = true
+  name     = "Configure OTP"
+  default_action = false
+  priority = 1
+}
+
+resource "keycloak_required_action" "update_password" {
   realm_id = keycloak_realm.apps_prod.id
   alias    = "UPDATE_PASSWORD"
   enabled  = true
