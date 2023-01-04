@@ -234,3 +234,21 @@ resource "keycloak_required_action" "prod_update_user_locale" {
   default_action = local.required_actions.update_user_locale.default_action
   priority = local.required_actions.update_user_locale.priority
 }
+
+resource "keycloak_required_action" "dev_verify_profile" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.verify_profile.alias
+  name = local.required_actions.verify_profile.name
+  enabled = local.required_actions.verify_profile.enabled
+  default_action = local.required_actions.verify_profile.default_action
+  priority = local.required_actions.verify_profile.priority
+}
+
+resource "keycloak_required_action" "prod_verify_profile" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.verify_profile.alias
+  name = local.required_actions.verify_profile.name
+  enabled = local.required_actions.verify_profile.enabled
+  default_action = local.required_actions.verify_profile.default_action
+  priority = local.required_actions.verify_profile.priority
+}
