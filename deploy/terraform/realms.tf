@@ -7,8 +7,6 @@ locals {
       login_with_email_allowed = true
     }
 
-    password_policy = "length(8) and upperCase(1) and lowerCase(1) and digits(1) and passwordHistory(3) and notUsername and specialChars(1) and notEmail"
-
     email = {
       host = local.email_credentials.host
       port = local.email_credentials.port
@@ -36,7 +34,8 @@ resource "keycloak_realm" "apps_dev" {
   reset_password_allowed = local.common_realm_settings.login.reset_password_allowed
   registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
-  password_policy = local.common_realm_settings.password_policy
+  # No policy in dev
+  password_policy = ""
 
   smtp_server {
     host = local.common_realm_settings.email.host
@@ -62,7 +61,7 @@ resource "keycloak_realm" "apps_prod" {
   reset_password_allowed = local.common_realm_settings.login.reset_password_allowed
   registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
-  password_policy = local.common_realm_settings.password_policy
+  password_policy = "length(8) and upperCase(1) and lowerCase(1) and digits(1) and passwordHistory(3) and notUsername and specialChars(1) and notEmail"
 
   smtp_server {
     host = local.common_realm_settings.email.host
