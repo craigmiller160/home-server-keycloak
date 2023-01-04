@@ -162,3 +162,75 @@ resource "keycloak_required_action" "prod_verify_email" {
   default_action = local.required_actions.verify_email.default_action
   priority = local.required_actions.verify_email.priority
 }
+
+resource "keycloak_required_action" "dev_delete_account" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.delete_account.alias
+  name = local.required_actions.delete_account.name
+  enabled = local.required_actions.delete_account.enabled
+  default_action = local.required_actions.delete_account.default_action
+  priority = local.required_actions.delete_account.priority
+}
+
+resource "keycloak_required_action" "prod_delete_account" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.delete_account.alias
+  name = local.required_actions.delete_account.name
+  enabled = local.required_actions.delete_account.enabled
+  default_action = local.required_actions.delete_account.default_action
+  priority = local.required_actions.delete_account.priority
+}
+
+resource "keycloak_required_action" "dev_webauthn_register" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.webauthn_register.alias
+  name = local.required_actions.webauthn_register.name
+  enabled = local.required_actions.webauthn_register.enabled
+  default_action = local.required_actions.webauthn_register.default_action
+  priority = local.required_actions.webauthn_register.priority
+}
+
+resource "keycloak_required_action" "prod_webauthn_register" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.webauthn_register.alias
+  name = local.required_actions.webauthn_register.name
+  enabled = local.required_actions.webauthn_register.enabled
+  default_action = local.required_actions.webauthn_register.default_action
+  priority = local.required_actions.webauthn_register.priority
+}
+
+resource "keycloak_required_action" "dev_webauthn_register_passwordless" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.webauthn_register_passwordless.alias
+  name = local.required_actions.webauthn_register_passwordless.name
+  enabled = local.required_actions.webauthn_register_passwordless.enabled
+  default_action = local.required_actions.webauthn_register_passwordless.default_action
+  priority = local.required_actions.webauthn_register_passwordless.priority
+}
+
+resource "keycloak_required_action" "prod_webauthn_register_passwordless" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.webauthn_register_passwordless.alias
+  name = local.required_actions.webauthn_register_passwordless.name
+  enabled = local.required_actions.webauthn_register_passwordless.enabled
+  default_action = local.required_actions.webauthn_register_passwordless.default_action
+  priority = local.required_actions.webauthn_register_passwordless.priority
+}
+
+resource "keycloak_required_action" "dev_update_user_locale" {
+  realm_id = keycloak_realm.apps_dev.id
+  alias = local.required_actions.update_user_locale.alias
+  name = local.required_actions.update_user_locale.name
+  enabled = local.required_actions.update_user_locale.enabled
+  default_action = local.required_actions.update_user_locale.default_action
+  priority = local.required_actions.update_user_locale.priority
+}
+
+resource "keycloak_required_action" "prod_update_user_locale" {
+  realm_id = keycloak_realm.apps_prod.id
+  alias = local.required_actions.update_user_locale.alias
+  name = local.required_actions.update_user_locale.name
+  enabled = local.required_actions.update_user_locale.enabled
+  default_action = local.required_actions.update_user_locale.default_action
+  priority = local.required_actions.update_user_locale.priority
+}
