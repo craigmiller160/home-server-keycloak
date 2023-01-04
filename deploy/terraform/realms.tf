@@ -20,6 +20,10 @@ locals {
   }
 }
 
+data "keycloak_realm" "master_realm" {
+  realm = "master"
+}
+
 resource "keycloak_realm" "apps_dev" {
   realm = "apps-dev"
   enabled = true
