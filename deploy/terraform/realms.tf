@@ -7,7 +7,7 @@ locals {
       login_with_email_allowed = true
     }
 
-    password_policy = "length(8) and upperCase(1) and lowerCase(1) and digits(1) and notRecentlyUsed(3) and notUsername and specialCharacters(1) and notEmail"
+    password_policy = "length(8) and upperCase(1) and lowerCase(1) and digits(1) and passwordHistory(3) and notUsername and specialChars(1) and notEmail"
 
     email = {
       host = local.email_credentials.host
