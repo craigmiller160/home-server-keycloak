@@ -5,6 +5,7 @@ locals {
     enabled = true
     access_type = "CONFIDENTIAL"
     service_accounts_enabled = true
+    direct_access_grants_enabled = true
   }
 }
 
@@ -15,6 +16,7 @@ resource "keycloak_openid_client" "postman_dev" {
   enabled = local.client_common.enabled
   access_type = local.client_common.access_type
   service_accounts_enabled = local.client_common.service_accounts_enabled
+  direct_access_grants_enabled = local.client_common.direct_access_grants_enabled
 }
 
 resource "keycloak_openid_client" "postman_prod" {
@@ -24,4 +26,5 @@ resource "keycloak_openid_client" "postman_prod" {
   enabled = local.client_common.enabled
   access_type = local.client_common.access_type
   service_accounts_enabled = local.client_common.service_accounts_enabled
+  direct_access_grants_enabled = local.client_common.direct_access_grants_enabled
 }
