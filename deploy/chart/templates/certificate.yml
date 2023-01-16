@@ -14,7 +14,7 @@ spec:
   commonName: {{ .Chart.Name }}-internal
   secretName: {{ .Chart.Name }}-internal
   dnsNames:
-    - infra-craigmiller160.ddns.net
+    - auth-craigmiller160.ddns.net
     - craigmiller160.ddns.net
     - localhost
   privateKey:

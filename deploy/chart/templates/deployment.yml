@@ -22,6 +22,8 @@ spec:
             - start
             - --hostname-strict=false
             - --proxy=edge
+            - --https-certificate-file=/certs/tls.crt
+            - --https-certificate-key-file=/certs/tls.key
           ports:
             - containerPort: {{ .Values.port }}
           envFrom:
