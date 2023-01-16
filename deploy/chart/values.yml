@@ -1,5 +1,10 @@
 port: 8443
 imageTag: 20.0.2
+probe:
+  httpGet:
+    path: /
+    port: 8443
+    scheme: HTTPS
 # TODO completely refactor this into internal vs external paths
 secure_ingress:
   name: keycloak-ingress
