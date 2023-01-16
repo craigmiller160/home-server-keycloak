@@ -26,7 +26,7 @@ resource "keycloak_realm" "master" {
   enabled = true
   display_name = "Keycloak"
   display_name_html = "<div class='kc-logo-text'><span>Keycloak</span></div>"
-  ssl_required = 'all'
+  ssl_required = "all"
 }
 
 resource "keycloak_realm" "apps_dev" {

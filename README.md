@@ -13,7 +13,21 @@ A database called `keycloak` must exist in Postgres.
 
 Follow the instructions for setting up the client for terraform to use at this link: [KeyCloak Terraform Docs](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs).
 
-Then, get the ID of the master admin user and import it into terraform by running the following commands:
+### Import Master Realm
+
+Import the master realm with this command:
+
+```bash
+cd ./deploy/terraform
+terraform import \
+  -var=onepassword_token=$ONEPASSWORD_TOKEN \
+  keycloak_realm.master \
+  master
+```
+
+### Import Admin User
+
+Get the ID of the admin user from the URL in the Keycloak UI and run this command with it:
 
 ```bash
 cd ./deploy/terraform
