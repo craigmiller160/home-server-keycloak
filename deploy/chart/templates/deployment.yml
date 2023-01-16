@@ -56,7 +56,7 @@ spec:
           readinessProbe: {{ .Values.probe | toYaml | trim | nindent 12 }}
             initialDelaySeconds: 10
             periodSeconds: 15
-            failureThreshold: 5
+            failureThreshold: 10
           livenessProbe: {{ .Values.probe | toYaml | trim | nindent 12 }}
             initialDelaySeconds: 30
             periodSeconds: 300
