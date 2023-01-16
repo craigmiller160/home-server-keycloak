@@ -5,13 +5,3 @@ probe:
     path: /
     port: 8443
     scheme: HTTPS
-# TODO completely refactor this into internal vs external paths
-secure_ingress:
-  name: keycloak-ingress
-  backendIsHttps: true
-  hosts:
-    - name: auth-craigmiller160.ddns.net
-      services:
-        - path: /(.*)
-          serviceName: keycloak
-          portNumber: 8443
