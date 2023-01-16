@@ -43,7 +43,7 @@ spec:
                 port:
                   number: {{ .Values.port }}
   tls:
-    - secretName: keycloak-ingress-public-secret
+    - secretName: letsencrypt-keycloak-public
       hosts:
         - auth-craigmiller160.ddns.net
 ---
@@ -93,6 +93,6 @@ spec:
                 port:
                   number: {{ .Values.port }}
   tls:
-    - secretName: keycloak-ingress-private-secret
+    - secretName: letsencrypt-keycloak-private
       hosts:
         - auth-craigmiller160.ddns.net
