@@ -45,3 +45,7 @@ The following shell environment variables must be present on the machine in orde
 # The operator access token for communicating with 1Password
 ONEPASSWORD_TOKEN=XXXXXXX
 ```
+
+## Frontend URL
+
+In Keycloak, for the `apps-dev` and `apps-prod` realms, go to Realm Settings in the UI and enter `https://auth-craigmiller160.ddns.net` as the Frontend URL. This needs to be done manually because this property is important and the terraform provider doesn't seem to support it.
