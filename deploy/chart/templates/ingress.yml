@@ -92,6 +92,13 @@ spec:
                 name: {{ .Chart.Name }}
                 port:
                   number: {{ .Values.port }}
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: {{ .Chart.Name }}
+                port:
+                  number: {{ .Values.port }}
   tls:
     - secretName: letsencrypt-keycloak-private
       hosts:
