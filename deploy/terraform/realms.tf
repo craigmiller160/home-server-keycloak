@@ -21,8 +21,12 @@ locals {
   }
 }
 
-data "keycloak_realm" "master_realm" {
+resource "keycloak_realm" "master" {
   realm = "master"
+  enabled = true
+  display_name = "Keycloak"
+  display_name_html = "<div class='kc-logo-text'><span>Keycloak</span></div>"
+  ssl_required = 'all'
 }
 
 resource "keycloak_realm" "apps_dev" {

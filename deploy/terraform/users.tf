@@ -1,5 +1,5 @@
 resource "keycloak_user" "master_admin_user" {
-  realm_id = data.keycloak_realm.master_realm.id
+  realm_id = keycloak_realm.master.id
   username = local.keycloak_admin.username
   enabled = true
   email = local.keycloak_admin.username
