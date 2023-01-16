@@ -1,6 +1,6 @@
 locals {
   common_realm_settings = {
-    ssl_required = 'all'
+    ssl_required = "all"
     login = {
       verify_email = true
       reset_password_allowed = true
