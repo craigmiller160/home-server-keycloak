@@ -1,6 +1,6 @@
 {
   "name": "@craigmiller160/keycloak",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "namespace": "infra-prod",
   "type": "application"
 }
