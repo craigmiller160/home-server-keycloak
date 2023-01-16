@@ -27,7 +27,7 @@ resource "keycloak_realm" "master" {
   display_name = "Keycloak"
   display_name_html = "<div class='kc-logo-text'><span>Keycloak</span></div>"
   ssl_required = "all"
-  default_signature_algorithm = "RS256"
+  default_signature_algorithm = "ES256"
 }
 
 resource "keycloak_realm" "apps_dev" {
