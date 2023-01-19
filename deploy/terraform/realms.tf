@@ -6,6 +6,7 @@ locals {
       reset_password_allowed = true
       registration_email_as_username = true
       login_with_email_allowed = true
+      theme = "keycloak"
     }
 
     email = {
@@ -28,13 +29,14 @@ resource "keycloak_realm" "master" {
   display_name_html = "<div class='kc-logo-text'><span>Keycloak</span></div>"
   ssl_required = "all"
   default_signature_algorithm = "ES256"
+  login_theme = "keycloak"
 }
 
 resource "keycloak_realm" "apps_dev" {
   realm = "apps-dev"
   enabled = true
-  display_name = "Apps (Dev)"
-  display_name_html = "<div class='kc-logo-text'><span>Apps (Dev)</span></div>"
+  display_name = "Craig Miller's Apps (Dev)"
+  display_name_html = "<h1>Craig Miller's Apps (Dev)</h1>"
   ssl_required = local.common_realm_settings.ssl_required
 
   verify_email = local.common_realm_settings.login.verify_email
@@ -43,6 +45,7 @@ resource "keycloak_realm" "apps_dev" {
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
   # No policy in dev
   password_policy = ""
+  login_theme = local.common_realm_settings.login.theme
 
   smtp_server {
     host = local.common_realm_settings.email.host
@@ -61,8 +64,8 @@ resource "keycloak_realm" "apps_dev" {
 resource "keycloak_realm" "apps_prod" {
   realm = "apps-prod"
   enabled = true
-  display_name = "Apps (Prod)"
-  display_name_html = "<div class='kc-logo-text'><span>Apps (Prod)</span></div>"
+  display_name = "Craig Miller's Apps"
+  display_name_html = "<h1>Craig Miller's Apps</h1>"
   ssl_required = local.common_realm_settings.ssl_required
 
   verify_email = local.common_realm_settings.login.verify_email
@@ -70,6 +73,7 @@ resource "keycloak_realm" "apps_prod" {
   registration_email_as_username = local.common_realm_settings.login.registration_email_as_username
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
   password_policy = "length(8) and upperCase(1) and lowerCase(1) and digits(1) and passwordHistory(3) and notUsername and specialChars(1) and notEmail"
+  login_theme = local.common_realm_settings.login.theme
 
   smtp_server {
     host = local.common_realm_settings.email.host
