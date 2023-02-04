@@ -19,6 +19,14 @@ locals {
       username = local.email_credentials.username
       password = local.email_credentials.password
     }
+
+    timeouts = {
+      sso_session_idle = "30m"
+      sso_session_max = "10m"
+      offline_session_idle = "30d"
+      login = "30m"
+      login_action = "30m"
+    }
   }
 }
 
@@ -47,6 +55,12 @@ resource "keycloak_realm" "apps_dev" {
   password_policy = ""
   login_theme = local.common_realm_settings.login.theme
 
+  sso_session_idle_timeout = local.common_realm_settings.timeouts.sso_session_idle
+  sso_session_max_lifespan = local.common_realm_settings.timeouts.sso_session_max
+  offline_session_idle_timeout = local.common_realm_settings.timeouts.sso_session_idle
+  access_code_lifespan_login = local.common_realm_settings.timeouts.login
+  access_code_lifespan_user_action = local.common_realm_settings.timeouts.login_action
+
   smtp_server {
     host = local.common_realm_settings.email.host
     port = local.common_realm_settings.email.port
@@ -74,6 +88,12 @@ resource "keycloak_realm" "apps_prod" {
   login_with_email_allowed = local.common_realm_settings.login.login_with_email_allowed
   password_policy = "length(8) and upperCase(1) and lowerCase(1) and digits(1) and passwordHistory(3) and notUsername and specialChars(1) and notEmail"
   login_theme = local.common_realm_settings.login.theme
+
+  sso_session_idle_timeout = local.common_realm_settings.timeouts.sso_session_idle
+  sso_session_max_lifespan = local.common_realm_settings.timeouts.sso_session_max
+  offline_session_idle_timeout = local.common_realm_settings.timeouts.sso_session_idle
+  access_code_lifespan_login = local.common_realm_settings.timeouts.login
+  access_code_lifespan_user_action = local.common_realm_settings.timeouts.login_action
 
   smtp_server {
     host = local.common_realm_settings.email.host
