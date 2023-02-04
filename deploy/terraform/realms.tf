@@ -26,6 +26,9 @@ locals {
       offline_session_idle = "30d"
       login = "30m"
       login_action = "30m"
+      access_token = "5m"
+      user_action = "5m"
+      admin_action = "12h"
     }
   }
 }
@@ -60,6 +63,9 @@ resource "keycloak_realm" "apps_dev" {
   offline_session_idle_timeout = local.common_realm_settings.timeouts.sso_session_idle
   access_code_lifespan_login = local.common_realm_settings.timeouts.login
   access_code_lifespan_user_action = local.common_realm_settings.timeouts.login_action
+  access_token_lifespan = local.common_realm_settings.timeouts.access_token
+  access_token_generated_by_user_lifespan = local.common_realm_settings.timeouts.user_action
+  access_token_generated_by_admin_lifespan = local.common_realm_settings.timeouts.admin_action
 
   smtp_server {
     host = local.common_realm_settings.email.host
@@ -94,6 +100,9 @@ resource "keycloak_realm" "apps_prod" {
   offline_session_idle_timeout = local.common_realm_settings.timeouts.sso_session_idle
   access_code_lifespan_login = local.common_realm_settings.timeouts.login
   access_code_lifespan_user_action = local.common_realm_settings.timeouts.login_action
+  access_token_lifespan = local.common_realm_settings.timeouts.access_token
+  access_token_generated_by_user_lifespan = local.common_realm_settings.timeouts.user_action
+  access_token_generated_by_admin_lifespan = local.common_realm_settings.timeouts.admin_action
 
   smtp_server {
     host = local.common_realm_settings.email.host
