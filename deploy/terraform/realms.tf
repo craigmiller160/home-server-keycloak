@@ -112,6 +112,9 @@ resource "keycloak_realm" "apps_prod" {
   action_token_generated_by_user_lifespan = local.common_realm_settings.timeouts.user_action
   action_token_generated_by_admin_lifespan = local.common_realm_settings.timeouts.admin_action
 
+  revoke_refresh_token = local.common_realm_settings.refresh_token.revoke
+  refresh_token_max_reuse = local.common_realm_settings.refresh_token.max_reuse
+
   smtp_server {
     host = local.common_realm_settings.email.host
     port = local.common_realm_settings.email.port
