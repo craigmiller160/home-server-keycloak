@@ -22,7 +22,7 @@ locals {
 
     timeouts = {
       sso_session_idle = "30m"
-      sso_session_max = "10m"
+      sso_session_max = "10h"
       offline_session_idle = "30d"
       login = "30m"
       login_action = "30m"
