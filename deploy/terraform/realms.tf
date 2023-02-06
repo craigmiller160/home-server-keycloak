@@ -32,7 +32,7 @@ locals {
     }
 
     refresh_token = {
-      revoke = true
+      revoke = false
       max_reuse = 1
     }
   }
