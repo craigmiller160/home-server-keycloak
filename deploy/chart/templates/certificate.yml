@@ -7,26 +7,26 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: craigmiller160@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-keycloak-public
+      name: letsencrypt-keycloak
     solvers:
       - http01:
           ingress:
             class: public
----
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: letsencrypt-keycloak-private
-spec:
-  acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: craigmiller160@gmail.com
-    privateKeySecretRef:
-      name: letsencrypt-keycloak-private
-    solvers:
-      - http01:
-          ingress:
-            class: public
+{{/*---*/}}
+{{/*apiVersion: cert-manager.io/v1*/}}
+{{/*kind: ClusterIssuer*/}}
+{{/*metadata:*/}}
+{{/*  name: letsencrypt-keycloak-private*/}}
+{{/*spec:*/}}
+{{/*  acme:*/}}
+{{/*    server: https://acme-v02.api.letsencrypt.org/directory*/}}
+{{/*    email: craigmiller160@gmail.com*/}}
+{{/*    privateKeySecretRef:*/}}
+{{/*      name: letsencrypt-keycloak-private*/}}
+{{/*    solvers:*/}}
+{{/*      - http01:*/}}
+{{/*          ingress:*/}}
+{{/*            class: public*/}}
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
