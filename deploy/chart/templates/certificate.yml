@@ -7,7 +7,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: craigmiller160@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-keycloak
+      name: letsencrypt-keycloak-private-key
     solvers:
       - http01:
           ingress:
