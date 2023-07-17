@@ -13,6 +13,13 @@ spec:
     - host: auth-craigmiller160.ddns.net
       http:
         paths:
+          - path: /.well-known/acme-challenge/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}
+                port:
+                  number: {{ .Values.port }}
           - path: /js/.*
             pathType: Prefix
             backend:
