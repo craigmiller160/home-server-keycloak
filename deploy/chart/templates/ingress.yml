@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: keycloak-public-ingress
   annotations:
-    kubernetes.io/ingress.class: public
     cert-manager.io/cluster-issuer: letsencrypt-keycloak
     nginx.ingress.kubernetes.io/proxy-body-size: 1000m
     nginx.ingress.kubernetes.io/proxy-buffer-size: 32k
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
+  ingressClassName: public
   rules:
     - host: auth-craigmiller160.ddns.net
       http:
