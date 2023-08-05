@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}
 data:
-  KC_DB: postgres
-  KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+  KC_DB: "postgres"
+  KC_DB_URL: "jdbc:postgresql://postgres:5432/keycloak"
