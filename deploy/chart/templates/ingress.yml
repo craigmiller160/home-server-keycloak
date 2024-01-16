@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: public
   rules:
-    - host: auth-craigmiller160.ddns.net
+    - host: auth.craigmiller160.us
       http:
         paths:
           - path: /.well-known/acme-challenge/.*
@@ -51,7 +51,7 @@ spec:
   tls:
     - secretName: letsencrypt-keycloak
       hosts:
-        - auth-craigmiller160.ddns.net
+        - auth.craigmiller160.us
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -67,7 +67,7 @@ metadata:
 spec:
   ingressClassName: public
   rules:
-    - host: auth-craigmiller160.ddns.net
+    - host: auth.craigmiller160.us
       http:
         paths:
           - path: /(.*)
@@ -80,4 +80,4 @@ spec:
   tls:
     - secretName: letsencrypt-keycloak
       hosts:
-        - auth-craigmiller160.ddns.net
+        - auth.craigmiller160.us
