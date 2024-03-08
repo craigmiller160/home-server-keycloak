@@ -10,7 +10,7 @@ data "onepassword_item" "email_credentials" {
 
 data "onepassword_item" "keycloak_admin" {
   vault = "k6xneqw7nf5f2fm4azxhbdrcji"
-  uuid = "evmnil3r5awkmty4samllmr7za"
+  uuid = "q7cus37bmpgal4nu2u56ncrfum"
 }
 
 locals {
