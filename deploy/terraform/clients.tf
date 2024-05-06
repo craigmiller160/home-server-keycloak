@@ -17,6 +17,9 @@ resource "keycloak_openid_client" "postman_dev" {
   access_type = local.client_common.access_type
   service_accounts_enabled = local.client_common.service_accounts_enabled
   direct_access_grants_enabled = local.client_common.direct_access_grants_enabled
+  web_origins = [
+    "*"
+  ]
 }
 
 resource "keycloak_openid_client" "postman_prod" {
